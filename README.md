@@ -12,9 +12,13 @@ This is an ongoing project which will be scaled from 9 classes to **70-80 classe
 
 Keywords: Python, scikit-learn, Stratified-KFold, multi-class, AWS S3, Tensorflow, Confusion Matrix, F1 Score.
 Motivation: Kaggle IMDB competition.
+
 ![alt text](https://https://github.com/Sumit1673/BeautySkillsClassificationTensorFlow/blob/main/ex1.png?raw=true)
+
 ![alt text](https://github.com/Sumit1673/BeautySkillsClassificationTensorFlow/blob/main/ex2.png?raw=true)
+
 ![alt text](https://github.com/Sumit1673/BeautySkillsClassificationTensorFlow/blob/main/ex3.png?raw=true)
+
 
 
 # WorkFlow:
@@ -22,11 +26,17 @@ Motivation: Kaggle IMDB competition.
 There are certain things are taken care before the actual process starts. The input images are transformed using JPEG encode of tensorflow, so before we proceed a function validates the dataset that it has all the valid JPEG images. Improper images are exculded from the dataset.
 
 Step 1: Create dataset csv file.
+
 Step 2: Validate Images using the csv file.
+
 Step 3: Create train, valid dataset and training dataset. Encodes the categorical labels (One-hot encoding)
+
 Step 4: For the first time it downloads the pre-trained weights of MobileNet_v2 from TensorFlow Hub.
+
 Step 5: Initialize ModelCheckpoint, LearningRateScheduler, Early Stopping (patience=epochs). Optimizer=Adam
+
 Step 6: Training --> Confusion Matrix , F1 score calculation --> Prediction
+
 
 Logs can be observerd in tensorboard using the logs saved in 'logs' folder.
 
