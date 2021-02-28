@@ -1,4 +1,4 @@
-# BeautySkillsClassificationTensorFlow (MultiClass-MultiLabel)
+# BeautySkillsClassificationTensorFlow (MultiClass-MultiLabel) on GPU
 
 **Multi-class Multi-Label classification Using TensorFlow**
 
@@ -19,7 +19,37 @@ Motivation: Kaggle IMDB competition.
 
 ![alt text](https://github.com/Sumit1673/BeautySkillsClassificationTensorFlow/blob/main/ex3.png?raw=true)
 
+# SETUP
 
+Requirements:
+  1. Python=3.8.5
+  2. TensorFlow=2.4.1
+  3. Tensorboard
+  4. GPU 
+  5. Scikit-Learn
+  6. Pandas
+
+# NOTE:
+  Some issues faced when using GPU training.
+  
+  If one faces GPU error related to **"Error : Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above".**
+  
+  Can be resolved:
+    1. By freeing the GPU memory. If you are using Ubuntu try the below commands:
+         
+         1. check which process is utlizing the GPU and get its PID. 
+    sudo fuser -v /dev/nvidia* | grep nvidia0
+
+          2. Delete that process with PID
+              sudo kill -9 <PID>
+    
+    2. USE THIS AT THE TOP OF THE training and prediction file to allow tensorflow know that you want the GPU  memory to 
+    grow as per the requirement. If this is not initialized, then TF will hold some default memory of the GPU which is not a good way if you are short in memory.
+    
+    physical_devices = tf.config.experimental.list_physical_devices('GPU')
+    if len(physical_devices) > 0:
+       tf.config.experimental.set_memory_growth(physical_devices[0], True)
+  
 
 # WorkFlow:
 
