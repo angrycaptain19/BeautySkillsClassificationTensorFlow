@@ -1,0 +1,13 @@
+# Clear GPU. This is important as the error related to memory or "ConvolutionALgorithm" will occur.
+
+1. check which process is utlizing the GPU and get its PID. 
+    sudo fuser -v /dev/nvidia* | grep nvidia0
+
+2. Delete that process with PID
+    sudo kill -9 <PID>
+
+    
+# USE THIS AT THE TOP OF THE SCRIPT
+physical_devices = tf.config.experimental.list_physical_devices('GPU')
+if len(physical_devices) > 0:
+   tf.config.experimental.set_memory_growth(physical_devices[0], True)

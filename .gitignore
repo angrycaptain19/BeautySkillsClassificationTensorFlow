@@ -3,6 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# exclude directories
+/data
+/logs
+/ckpt 
+
 # C extensions
 *.so
 
@@ -130,3 +135,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+*.jpg
+*.jpeg
+*.png 
