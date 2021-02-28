@@ -13,11 +13,11 @@ This is an ongoing project which will be scaled from 9 classes to **70-80 classe
 Keywords: Python, scikit-learn, Stratified-KFold, multi-class, AWS S3, Tensorflow, Confusion Matrix, F1 Score.
 Motivation: Kaggle IMDB competition.
 
-![] (https://https://github.com/Sumit1673/BeautySkillsClassificationTensorFlow/blob/main/ex1.png?raw=true)
+![](https://https://github.com/Sumit1673/BeautySkillsClassificationTensorFlow/blob/main/ex1.png?raw=true)
 
-![] (https://github.com/Sumit1673/BeautySkillsClassificationTensorFlow/blob/main/ex2.png?raw=true)
+![](https://github.com/Sumit1673/BeautySkillsClassificationTensorFlow/blob/main/ex2.png?raw=true)
 
-![] (https://github.com/Sumit1673/BeautySkillsClassificationTensorFlow/blob/main/ex3.png?raw=true)
+![](https://github.com/Sumit1673/BeautySkillsClassificationTensorFlow/blob/main/ex3.png?raw=true)
 
 # SETUP
 
