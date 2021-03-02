@@ -72,10 +72,12 @@ class BeautyDataLoader:
 
     def generate_label_encodings(self):
         # train_labels, valid_labels = [], []
-        labels = []
-        for b, sk in zip(self.df.isbeauty[1:], self.df.skill[1:]):
-            if b != 'isbeauty' and sk!='skill':
-                labels.append([b, sk])
+        labels = [
+            [b, sk]
+            for b, sk in zip(self.df.isbeauty[1:], self.df.skill[1:])
+            if b != 'isbeauty' and sk != 'skill'
+        ]
+
         # print("Labels:")
         self.mlb = MultiLabelBinarizer()
         self.mlb.fit(labels)

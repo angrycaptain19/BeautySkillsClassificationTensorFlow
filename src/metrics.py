@@ -26,8 +26,6 @@ class PerformanceMetric:
         fp = tf.cast(tf.math.count_nonzero(y_pred * (1 - y), axis=0), tf.float32)
         fn = tf.cast(tf.math.count_nonzero((1 - y_pred) * y, axis=0), tf.float32)
         f1 = 2*tp / (2*tp + fn + fp + 1e-16)
-        macro_f1 = tf.reduce_mean(f1)
-        return macro_f1
+        return tf.reduce_mean(f1)
 
-if __name__ =="__main__":
-    pass
+pass
