@@ -22,7 +22,7 @@ class TrainModel:
 
         # load KFold dataset
         self.dataset = []
-        for kf in range(0, self.config.KFolds):
+        for kf in range(self.config.KFolds):
             self.dataset.append(BeautyDataLoader().create_dataset(fold=kf))
 
         # set loss function
@@ -42,19 +42,19 @@ class TrainModel:
         earlystopping = EarlyStopping(monitor='val_loss', patience=10,min_delta=0.01, mode='auto')
         csv_log = CSVLogger("logs/logfiles/results.csv")
         # checkpoint = ModelCheckpoint( filepath='./ckpt/', save_freq='epoch',save_best_only=False, save_weights_only=True,verbose=1)
-        
+
 
         self.model.compile(
               optimizer=tf.keras.optimizers.Adam(lr=0.0001),
               loss=tf.keras.metrics.binary_crossentropy,
               metrics=[self.macro_f1]
               )
-        
-        for k in range(0, 1):
-            best_val_loss = 0.5
+
+        best_val_loss = 0.5
+        for k in range(1):
             print("Processing Fold {}.... ".format(k))
             filepath='./ckpt/'+self.timestamp + '/'+str(k)+'/'
-            
+
             # checkpoint = ModelCheckpoint(
             #     filepath=filepath, monitor='val_loss',
             #     save_best_only=True, save_weights_only=True,verbose=10
